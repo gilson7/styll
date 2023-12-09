@@ -1,0 +1,406 @@
+*{
+    font-family: 'Jost', sans-serif;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 200ms;
+    border-radius: 14px;
+}
+
+nav img{
+    display: block;
+    height:39px;
+    margin-left: 20px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow:  4px 4px 7px #1313133f,
+    -4px -4px 7px #ffffff;
+}
+
+.share{
+    text-align: center;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    cursor: pointer;
+    
+    background-size: cover;
+    height: 27px;
+    padding: 10px;
+    border-radius: 14px;
+    color: black;
+    background: #f7f7f7;
+    box-shadow:  4px 4px 7px #bebebe34,
+                -4px -4px 7px #ffffff;
+}
+
+h4{
+    display: block;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+
+}
+nav{
+    color: white;
+    background-color: rgb(240, 240, 240);
+    border-bottom: solid 1px #f7f7f7;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    position: relative;
+    z-index: 999;
+    box-shadow:rgba(0, 0, 0, 0.041) 0px 11px 10px 0px; 
+    -webkit-box-shadow: rgba(0, 0, 0, 0.041) 0px 11px 10px 0px; 
+    -moz-box-shadow: rgba(0, 0, 0, 0.041) 0px 11px 10px 0px;
+}
+
+
+body{
+    margin: 0;
+    background-color: #ededed;
+}
+.content{
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+    background-color: #ededed00;
+    display: flex;
+    position: relative;
+    border-radius: 0;
+}
+.view{
+    width: 400px;
+    height: 600px;
+    background-position: center;
+    background-size: contain;
+    box-shadow:  4px 4px 7px #bebebe34,
+    -4px -4px 7px #ffffff5b;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+.colors{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: calc(100% - 20px);
+}
+.colors .color{
+    width: 70px;
+    height: 50px;
+    margin-left: 10px;
+    border: solid 2px #00000025;
+    cursor: pointer;
+}
+.colors .color.active{
+    outline:solid 5px #ffffff;
+}
+.sizes{
+    border: solid 1px white;
+    display: flex;
+    height: fit-content;
+    position: relative;
+    margin-top: 10px;
+    backdrop-filter: blur(5px);
+    width: calc(100% - 20px);
+}
+.sizes::before{
+    content: "Tamanhos";
+    display: block;
+    position: absolute;
+    top: -24px;
+    left: 20px;
+    padding: 0 15px;
+    border-radius:14px 14px  0 0 ;
+    background-color: white;
+}
+.sizes .tam{
+    width: 40px;
+    text-align: center;
+    background-color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.display-view{
+    margin-top: 10px;
+}
+.all-fotos{
+    width: 100%;
+    display: flex;
+    height: 80px;
+    margin-top: 10px;
+}
+.all-fotos .fotoButton{
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    margin-left: 5px;
+}
+.display-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 400px;
+    align-items: center;
+    margin-top: 10px;
+}
+.display-info div{
+    padding:  10px 0;
+
+
+
+}
+.buy{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    box-shadow:rgba(255, 255, 255, 0.38) 3px 3px 18px 1px inset, rgba(0, 0, 0, 0.28) 6px 6px 8px -2px, rgb(255, 255, 255) -5px -4px 5px 0px; 
+    -webkit-box-shadow: rgba(255, 255, 255, 0.38) 3px 3px 18px 1px inset, rgba(0, 0, 0, 0.28) 6px 6px 8px -2px, rgb(255, 255, 255) -5px -4px 5px 0px; 
+    -moz-box-shadow:  rgba(255, 255, 255, 0.38) 3px 3px 18px 1px inset, rgba(0, 0, 0, 0.28) 6px 6px 8px -2px, rgb(255, 255, 255) -5px -4px 5px 0px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 20px);
+}
+.buy:hover{
+    filter: brightness(120%);
+}
+.buy:active{
+    box-shadow: rgba(0, 0, 0, 0.43) 1px 2px 5px 1px, rgb(255, 255, 255) -5px -4px 5px 0px; 
+    -webkit-box-shadow:  rgba(0, 0, 0, 0.43) 1px 2px 5px 1px, rgb(255, 255, 255) -5px -4px 5px 0px; 
+    -moz-box-shadow:   rgba(0, 0, 0, 0.43) 1px 2px 5px 1px, rgb(255, 255, 255) -5px -4px 5px 0px;
+    transform: translateY(1px);
+}
+
+.buy::before{
+    content: "";
+    margin: 0;
+    width: 50px;
+    object-fit: contain;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: -20px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.418) 0%, rgba(153,153,153,0) 100%);
+    border-right: solid 20px rgba(255, 255, 255, 0.034);
+    position: absolute;
+    animation: moverDaEsquerdaParaDireita 5s linear infinite;
+    transform: skewX(-20deg);
+    filter: blur(10px);
+}
+#recom{
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 100px;
+    overflow-x: auto;
+    padding-bottom: 50px;
+}
+#recom::-webkit-scrollbar {
+    display: none;
+  }
+.prod-ram{
+    min-width: 160px;
+    margin: 5px;
+    background-color: rgb(240, 240, 240);
+    box-shadow:  5px 5px 21px #8b89a04f,
+    -5px -5px 21px #ffffff;    
+    padding: 5px;
+
+  
+}
+.prod-ram .prod-img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: rgb(240, 240, 240);
+    outline: solid 2px white;
+    
+}
+
+.h1-recom{
+    position: relative;
+    z-index: 1;
+    margin-left: 10px;
+    text-align: center;
+}
+@keyframes moverDaEsquerdaParaDireita {
+    0% {
+        left: -20px;
+    }
+    35% {
+        left: 500%;
+    }
+    100% {
+        left: 500%;
+    }
+}
+.oldPreco{
+    color: rgb(112, 112, 112);
+    text-decoration: line-through 2px;
+    display: block;
+    font-size: 20px;
+    width: 100%;
+    font-weight: 400;
+}
+.price{
+    font-weight: 600;
+    font-size: 25px;
+    width: calc(100% - 20px);
+}
+.desconto{
+    margin-left: 5px;
+    font-size: 20px;
+
+    color: rgb(21, 206, 104);
+    padding: 0 10px;
+}
+
+
+.rec-oldPreco{
+    color: rgb(112, 112, 112);
+    text-decoration: line-through 2px;
+    display: block;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 400;
+}
+.rec-price{
+    font-weight: 600;
+    font-size: 25px;
+    width: calc(100% - 20px);
+}
+.rec-desconto{
+    margin-left: 5px;
+    font-size: 15px;
+
+    color: rgb(21, 206, 104);
+    padding: 0 10px;
+}
+
+
+.title{
+    font-size: 20px;
+    width: calc(100% - 20px);
+}
+.tam.active{
+    outline: solid 2px rgb(0, 0, 0);
+}
+.fotoButton.active{
+    box-shadow: inset 2px 3px  5px rgba(0, 0, 0, 0.404);
+    outline: solid 2px rgb(0, 0, 0);
+
+}
+.close-full{
+    color: #ffffff;
+    font-size: 40px;
+    width: fit-content;
+    transform: rotate(45deg);
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.356);
+    
+}
+.full{
+    border-radius: 0;
+    width: 100vw ;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #00000096;
+
+}
+@media (max-width: 670px) {
+    .content{
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .buy{
+        width: 100vw;
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        z-index: 9999;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
+        background-color: rgb(63 67 158);
+    }
+
+
+    .display-view{
+        width: 100%;
+
+    }
+    .display-info{
+        width: 100%;
+        height: 360px;
+    }
+    .buy:active{
+      box-shadow: none;
+    }
+    .view{
+        width: 100%;
+        max-height: 700px;
+        border-radius: 14px 14px 0px 0px ;
+        background-color: rgb(240, 240, 240);
+    }
+    .price{
+
+    }
+    .title{
+        border-top:solid 2px white;
+        border-radius: 0;
+    }
+    .all-fotos{
+        padding: 6px 0;
+        background-color: rgb(240, 240, 240);
+        margin-top: 0px;
+        border-radius: 0px 0px 14px 14px;
+    }
+    .fotoButton{
+        box-shadow:  3px 3px  5px rgba(0, 0, 0, 0.068);
+        background-color: rgb(240, 240, 240);
+    }
+    .fotoButton.active{
+        filter: brightness(.9);
+  
+            box-shadow: none;
+            outline: none;
+        
+        
+    }
+    .price {
+        background-color: #ffffff;
+    }
+    .price span{
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+
+}

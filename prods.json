@@ -1,0 +1,65 @@
+{
+    "produtos": [
+      {
+        "titulo": "Camiseta foda",
+        "preco": 39.99,
+        "imagem": "camisa1.webp",
+        "id":"A1B2C3D4"
+      },
+      {
+        "titulo": "Outra Camiseta Foda",
+        "preco": 39.99,
+        "imagem": "camisa2.webp",
+        "id":"L9M0N1O2"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa3.webp",
+        "id":"X5Y6Z7W8"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa4.webp",
+        "id":"P3Q4R5S6"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa5.webp",
+        "id":"G7H8I9J0"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa6.webp",
+        "id":"K1L2M3N4O5"
+        
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa7.webp",
+        "id":"D6E7F8G9H0"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa8.webp",
+        "id":"T1U2V3W4X5"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa9.webp",
+        "id":"Y6Z7A8B9C0"
+      },
+      {
+        "titulo": "produto",
+        "preco": 39.99,
+        "imagem": "camisa10.webp",
+        "id":"E1F2G3H4I5"
+      }
+    ]
+  }
