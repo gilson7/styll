@@ -95,7 +95,7 @@ async function obterProdutos() {
         
             content.appendChild(divPub);
             divPub.onclick=function(){
-                window.location.href=`/prod.html?id=${doc.id}`
+                window.location.href=`./prod.html?id=${doc.id}`
             }
       })
       removeLoad()
