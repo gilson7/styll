@@ -302,7 +302,7 @@ async function renderRandom(produtos){
         prod.appendChild(title)
         prod.appendChild(price)
         prod.onclick=()=>{
-            window.location.href=`../prod.html?id=${prodc.id}`
+            window.location.href=`./prod.html?id=${prodc.id}`
         }
         ramproducts.appendChild(prod)
     })
