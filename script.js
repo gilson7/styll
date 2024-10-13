@@ -22,13 +22,82 @@ function html(type,className){
     elemento.className = className
     return elemento
 }
+
+function getCategoryFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('categoria');
+}
+const categoriaParam = getCategoryFromURL()
+
+async function obterCategorias() {
+    const produtoCategorias = collection(db, "categorias");
+    const snapshot = await getDocs(produtoCategorias);
+    if(snapshot.empty){
+        return[]
+    }
+    const res = []
+    snapshot.forEach(ele=>{
+        res.push(ele.data())
+    })
+    return res
+}
+
+const categoriasElement = document.getElementById("categorys")
+obterCategorias().then(res=>{
+    
+    categoriasElement.innerHTML = ""
+    const primayCategoryElement = html("div","category")
+    primayCategoryElement.textContent = "Todos"
+    primayCategoryElement.onclick = ()=>{
+        const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.location.replace(cleanURL);
+    }
+    categoriasElement.appendChild(primayCategoryElement)
+    if(!categoriaParam){
+        primayCategoryElement.classList.add("active")
+    }
+
+    res.map((ele)=>{
+        const categoryElement = html("div","category")
+        categoryElement.onclick = ()=>{
+            location.href="/?categoria="+ele.code
+        }
+        if(ele.code==categoriaParam){
+            categoryElement.classList.add("active")
+        }
+        categoryElement.textContent = ele.name
+        categoriasElement.appendChild(categoryElement)
+    })
+})
+
+
+
+
+
 async function obterProdutos() {
+
     try {
         const snapshot = await getDocs(produtosColec);
+        content.innerHTML=""
+     
         snapshot.forEach((doc) => {
-            
-
             const ele = doc.data()
+            //filtrando categoria
+            if(categoriaParam){
+  
+                const categorias = ele.categorias||[]
+                console.log(categorias)
+                let isValid = false
+                categorias.map(categ=>{
+                    if(categ.code==categoriaParam){
+                        isValid = true
+                        console.log(isValid)
+                    }
+                })
+                if(!isValid){
+                    return
+                }
+            }
             var isRender = false
             //checando estoque antes de renderizar
             ele.variacoes.map(ele=>{
@@ -99,8 +168,9 @@ async function obterProdutos() {
             }
       })
       removeLoad()
-    }catch{
+    }catch(erro){
         removeLoad()
+        console.log(erro)
         alert("Infelismente Ocorreu um erro ao carregar o conteudo volte mais tarde enquanto resolvemos por aqui")
     }
 }

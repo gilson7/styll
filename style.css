@@ -1,12 +1,53 @@
+
 .root{
     height: calc(100vh - 86px);
     bottom: 0;
-    overflow: auto
+    overflow: auto;
+ 
+    margin: auto;
 }
+.categs{
+    margin: 10px;
+    outline: solid 1px white;
+    border-radius: 7px;
+    padding: 5px;
+    background-color: white;
 
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+.categs h4{
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+.categs-container{
+    display: flex;
+   
+}
+.categs-container .category{
+    background-color: white;
+    margin: 5px;
+    font-size: 15px;
+    padding: 0 3px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.336);
+}
+.category.active{
+    color: black;
+    border-bottom: solid 2px black;
+}
+.categs-container .category:hover{
+    color: black;
+
+}
 .content{
     display: flex;
     width: 100%;
+    max-width: 950px;
+    margin: auto;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
@@ -15,7 +56,7 @@
     z-index: 1;
 }
 .image{
-    border-radius: 14px 14px 0 0 ;
+    border-radius: 7px 7px 0 0 ;
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
@@ -24,34 +65,36 @@
     object-fit: contain;
     display: block;
     height: 450px;
-    border-radius: 14px 14px 0 0 ;
+    border-radius: 7px 7px 0 0 ;
 
  
 }
 .pub{
-    width: 300px;
+    width: 250px;
     margin: 10px;
     height: fit-content;
-    border-radius: 14px;
-    background: #ededed;
-    box-shadow:  5px 5px 21px #8b89a04f,
+    border-radius: 7px;
+    background: #ffffff;
+    box-shadow:  5px 5px 21px #00000007,
                  -5px -5px 21px #ffffff;    
                  position: relative;
     outline-color: white;
+    cursor: pointer;
 }
 .pub::before{
     content: 'PIX 8%OFF';
     display: block;
     float: right;
     position: absolute;
-    right: 5px;
-    top: 5px;
-    font-size: 10px;
-    background-color: rgb(21, 206, 104);
-    border-radius: 17px;
-    padding: 0 5px;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    border:solid 2px #4eff9e;
+    border-radius: 10px;
+    padding: 0 10px;
     font-weight: 600;
-
+    background-color: #4eff9e18;
+    backdrop-filter: blur(10px);
 }
 .pub:hover{
     filter: brightness(105%);
@@ -64,8 +107,13 @@
     flex-direction: column;
     font-size: 20px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 5px;
+    
+}
+.infos .title {
+    font-size: 16px;
+    margin-left: 10px;
 }
 
 .oldPreco{
@@ -89,8 +137,31 @@
     color: rgb(21, 206, 104);
     padding: 0 10px;
 }
-
-
+.loading{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    max-width: 900px;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 1s cubic-bezier(0.215, 0.610, 0.355, 1) infinite ;
+}
+.loading div{
+    width: 250px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.767);
+    margin: 10px;
+    border-radius: 10px;
+}
+@keyframes pulse {
+    100%{
+        opacity: 100%;
+    }
+    50%{
+        opacity:30%;
+    }
+}
 
 
 @media (max-width: 670px) {
@@ -100,22 +171,20 @@
     .pub{
         width: 200px;
         margin: 5px;
-        border-radius: 14px;
-        background: #ededed;
-        box-shadow:  5px 5px 21px #8b89a04f,
-                     -5px -5px 21px #ffffff;    
+        border-radius: 7px;    
     }
     .infos{
         font-size: 15px;
+    }
+    .infos .title{
+        font-size: 14px;
     }
     .image img{ 
         width: 100%;
         object-fit: contain;
         display: block;
         height: 300px;
-        border-radius: 14px 14px 0 0 ;
-    
-     
+        border-radius: 7px 7px 0 0 ;
     }
     .price{
         font-size: 17px;
@@ -130,10 +199,10 @@
     .pub{
         width: calc(50% - 20px);
         margin: 5px;
-        border-radius: 14px;
-        background: #ededed;
-        box-shadow:  5px 5px 21px #8b89a04f,
-                     -5px -5px 21px #ffffff;    
+        border-radius: 7px;  
+    }
+    .infos .title{
+        font-size: 13px;
     }
     .infos{
         font-size: 15px;
@@ -143,7 +212,7 @@
         object-fit: contain;
         display: block;
         height: 280px;
-        border-radius: 14px 14px 0 0 ;
+        border-radius: 7px 7px 0 0 ;
     
      
     }
