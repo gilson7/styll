@@ -273,6 +273,25 @@ async function render(produto){
 const ramproducts = document.getElementById("recom")
 async function renderRandom(produtos){
     produtos.map((prodc)=>{
+
+
+        if(prodc?.visibilidade == "hidden"){
+            return
+        }
+        var isRender = false
+        //checando estoque antes de renderizar
+        prodc.variacoes.map(ele=>{
+            ele.tamanhos.map(e=>{
+                if(parseFloat(e.estoque)){
+                    isRender = true
+                }
+            })
+        })
+        if(!isRender){
+            return
+        }
+
+
         const imagem = html("img","prod-img")
         imagem.src = prodc.variacoes[0].fotos[0]
         const title = html("div","prod-title")

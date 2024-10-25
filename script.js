@@ -82,6 +82,9 @@ async function obterProdutos() {
      
         snapshot.forEach((doc) => {
             const ele = doc.data()
+            if(ele?.visibilidade == "hidden"){
+                return
+            }
             //filtrando categoria
             if(categoriaParam){
   
@@ -110,6 +113,8 @@ async function obterProdutos() {
             if(!isRender){
                 return
             }
+            
+
             const divPub = document.createElement("div");
             divPub.classList.add("pub");
         
@@ -171,7 +176,7 @@ async function obterProdutos() {
     }catch(erro){
         removeLoad()
         console.log(erro)
-        alert("Infelismente Ocorreu um erro ao carregar o conteudo volte mais tarde enquanto resolvemos por aqui")
+        alert("Infelizmente ocorreu um erro ao carregar o conteúdo ,volte mais tarde enquanto resolvemos por aqui.")
     }
 }
 
